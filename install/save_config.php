@@ -37,10 +37,7 @@ if (isset($_POST['server_name'])  && isset($_POST['analytics']) && isset($_POST[
     }
 
     fclose( $f );
-    if (!$indexer->askRun()){
-    }else{
-        $indexer->installFinished($config[ 'analytics' ]);
-    }
+    $indexer->installFinished($config[ 'analytics' ]);
     $result['status'] = 42;
     $result['message'] = "Successfully saved";
 }
